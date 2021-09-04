@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/custom_surffix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
+import 'package:shop_app/components/forgot_password_button.dart';
+import 'package:shop_app/screens/login_success/login_success_screen.dart';
+
 import 'package:shop_app/screens/splash/components/form_error.dart';
 
 import '../../../../constants.dart';
@@ -41,10 +44,7 @@ class _SignFormState extends State<SignForm> {
                   }),
               Text("Remember me"),
               Spacer(),
-              Text(
-                "Forgot Password",
-                style: TextStyle(decoration: TextDecoration.underline),
-              )
+              ForgotPassword()
             ],
           ),
           FormError(errors: errors),
@@ -56,6 +56,8 @@ class _SignFormState extends State<SignForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                //if all data is valid
+                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
           )
