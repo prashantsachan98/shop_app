@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
+
+import 'package:shop_app/screens/sign_up/sign_up_screen.dart';
 import 'package:shop_app/screens/splash/components/social_card.dart';
-import 'package:shop_app/screens/splash/sign_in/components/sign_form.dart';
+import 'package:shop_app/screens/sign_in/components/sign_form.dart';
 import 'package:shop_app/size_config.dart';
 
 class Body extends StatelessWidget {
@@ -66,11 +68,16 @@ class Body extends StatelessWidget {
                       style:
                           TextStyle(fontSize: getProportionateScreenwidth(16)),
                     ),
-                    Text(
-                      "Sign up",
-                      style: TextStyle(
-                          fontSize: getProportionateScreenwidth(16),
-                          color: kPrimaryColor),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, SignUpScreen.routeName);
+                      },
+                      child: Text(
+                        "Sign up",
+                        style: TextStyle(
+                            fontSize: getProportionateScreenwidth(16),
+                            color: kPrimaryColor),
+                      ),
                     )
                   ],
                 )
