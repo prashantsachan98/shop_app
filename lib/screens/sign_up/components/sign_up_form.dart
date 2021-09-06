@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/custom_surffix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
+import 'package:shop_app/screens/complete_profile%20screen/complete_profile_screen.dart';
 import 'package:shop_app/screens/splash/components/form_error.dart';
 
 import '../../../constants.dart';
@@ -60,7 +61,8 @@ class _SignUpFormState extends State<SignUpForm> {
               press: () {
                 if (_formKey.currentState.validate()) {
                   if (confirmPassword == password) {
-                    print('object');
+                    Navigator.pushNamed(
+                        context, CompleteProfileScreen.routeName);
                   }
                 }
               },
