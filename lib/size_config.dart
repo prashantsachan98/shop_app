@@ -27,6 +27,5 @@ double getProportionateScreenHeight(double inputHeight) {
 double getProportionateScreenwidth(double inputWidtht) {
   double screenWidth = SizeConfig.screenWidth;
   //375 is the layout width that designer use
-  return (inputWidtht/375.0)* screenWidth;
-  }
-
+  return (inputWidtht / 375.0) * screenWidth;
+}
